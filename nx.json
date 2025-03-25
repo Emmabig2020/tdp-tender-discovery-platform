@@ -16,21 +16,16 @@
     ],
     "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
   },
-  "nxCloudId": "6796bf384dab443c8a3b4c41",
+  "nxCloudId": "67e2a1fd1812a8937b27f1a7",
   "plugins": [
     {
       "plugin": "@nx/js/typescript",
       "options": {
-        "typecheck": {
-          "targetName": "typecheck"
-        },
-        "build": {
-          "targetName": "build",
-          "configName": "tsconfig.lib.json"
-        }
+        "typecheck": { "targetName": "typecheck" },
+        "build": { "targetName": "build", "configName": "tsconfig.lib.json" }
       }
     },
-    {"plugin": "@nxlv/python"},
+    { "plugin": "@nxlv/python" },
     {
       "plugin": "@nx/webpack/plugin",
       "options": {
@@ -50,17 +45,11 @@
     },
     {
       "plugin": "@nx/jest/plugin",
-      "options": {
-        "targetName": "test"
-      },
+      "options": { "targetName": "test" },
       "exclude": ["apps/backend-e2e/**/*"]
     }
   ],
-  "targetDefaults": {
-    "e2e-ci--**/*": {
-      "dependsOn": ["^build"]
-    }
-  },
+  "targetDefaults": { "e2e-ci--**/*": { "dependsOn": ["^build"] } },
   "generators": {
     "@nx/react": {
       "application": {
@@ -69,13 +58,8 @@
         "linter": "none",
         "bundler": "webpack"
       },
-      "component": {
-        "style": "tailwind"
-      },
-      "library": {
-        "style": "tailwind",
-        "linter": "none"
-      }
+      "component": { "style": "tailwind" },
+      "library": { "style": "tailwind", "linter": "none" }
     }
   }
 }
